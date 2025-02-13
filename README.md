@@ -23,7 +23,7 @@ Este projeto foi desenvolvido para a matéria de Projetos de Software, do curso 
 | Secretaria | Gerenciar a alocação de professores por disciplina | Ter maior controle sobre informções relacionadas as disciplinas |
 | Secretaria | Gerenciar o período de matrículas | Evitar problemas em relação a matrículas fora de prazo |
 | Professor | Gerenciar quantidade de alunos por sala | Ter informações sobre a quantidade de alunos matriculados por sala |
-| Professor | Ter acesso a informações sobre o aluno como número de matrícula | Ter maior controle sobre informações relacionadas a alunos |
+| Professor | Acessar a informações sobre o aluno como número de matrícula | Ter maior controle sobre informações relacionadas a alunos |
 
 
 ## Links Uteis
