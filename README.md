@@ -1,6 +1,6 @@
 # Projeto de Sistema de Matrículas
 
-Este projeto foi desenvolvido para a matéria de Projetos de Software, do curso de Engenharia de Software da Pontiícia Universidade Católica de Minas Gerais. Se tratando do desenvolvimento de um sistema de matrículas infomatizado para uma universidade.
+Este projeto foi desenvolvido para a matéria de Projetos de Software, do curso de Engenharia de Software da Pontifícia Universidade Católica de Minas Gerais. Se tratando do desenvolvimento de um sistema de matrículas infomatizado para uma universidade.
 
 ---
 
