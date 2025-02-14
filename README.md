@@ -29,4 +29,4 @@ Este projeto foi desenvolvido para a matéria de Projetos de Software, do curso 
 ## Links Uteis
 
 - [Diagrama de Casos de Uso no Figma](https://www.figma.com/board/wF6VISE7wazLz5nLJRs01S/Use-Case-(Copy)?node-id=0-1&t=9BhIaHnJ9eTdwW5z-1)
-
+- [Diagrama de Classes no Figma](https://www.figma.com/board/SFUK5CWMCommWkiJO6hWZj/Class-Diagram-Template-(Community)?node-id=3-923)
