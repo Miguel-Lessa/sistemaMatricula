@@ -7,7 +7,6 @@ public class Aluno {
     private List<Disciplina> disciplinasMatriculadasObrigatorias;
     private List<Disciplina> disciplinasMatriculadasOptativas;
 
-
     //Construtor
     public Aluno(int matricula, List<Disciplina> disciplinasMatriculadas) {
         this.matricula = matricula;
@@ -15,9 +14,7 @@ public class Aluno {
         this.disciplinasMatriculadasOptativas = disciplinasMatriculadasOptativas;
     }
 
-
     //Métodos
-
     public void matricular(Disciplina disciplina) {
         if (disciplina.isObrigatoria() == true){
             if (disciplinasMatriculadasObrigatorias.size() <= 4){

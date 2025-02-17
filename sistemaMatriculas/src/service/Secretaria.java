@@ -2,13 +2,14 @@ package service;
 
 public class Secretaria {
 
-    public void gerenciarCurriculo(){
+    public void gerenciarCurriculo() {
 
     }
 
-    public void verificarPeriodoMatricula(){
+    public void verificarPeriodoMatricula() {
 
     }
 
-    public void cadastrarProfessor() {}
+    public void cadastrarProfessor() {
+    }
 }
