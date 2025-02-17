@@ -63,4 +63,12 @@ public class Disciplina {
     public List<Aluno> getAlunosMatriculados() {
         return alunosMatriculados;
     }
+
+    public boolean isObrigatoria() {
+        return obrigatoria;
+    }
+
+    public void setObrigatoria(boolean obrigatoria) {
+        this.obrigatoria = obrigatoria;
+    }
 }
