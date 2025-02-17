@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Disciplina {
@@ -8,17 +9,41 @@ public class Disciplina {
     private Professor professor;
     private Double valor;
 
-    public boolean verificarAtivacao(){
-        int i = 0;
+    public Disciplina(int codigo, String nome, boolean obrigatoria, List<Aluno> alunosMatriculados, Professor professor, Double valor) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.obrigatoria = obrigatoria;
+        this.alunosMatriculados = alunosMatriculados;
+        this.professor = professor;
+        this.valor = valor;
+    }
 
-        for (Aluno alunosMatriculados : alunosMatriculados){
-            i++;
-        }
-        if (i >= 3 && i <=60){
-            return true;
-        }
+    public Disciplina(int codigo, String nome, boolean obrigatoria, Professor professor, Double valor) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.obrigatoria = obrigatoria;
+        this.professor = professor;
+        this.valor = valor;
+        this.alunosMatriculados = new ArrayList<>(); // Inicializa a lista vazia
+    }
 
-        return false;
+
+    /// /    public boolean verificarAtivacao() {
+    /// /        int i = 0;
+    /// /
+    /// /        for (Aluno alunosMatriculados : alunosMatriculados) {
+    /// /            i++;
+    /// /        }
+    /// /        if (i >= 3 && i <= 60) {
+    /// /            return true;
+    /// /        }
+//
+//        return false;
+//    }
+
+    public boolean verificarAtivacao() {
+        int numeroAlunos = alunosMatriculados.size();
+        return numeroAlunos >= 3 && numeroAlunos <= 60;
     }
 
     public String getNome() {
@@ -29,7 +54,7 @@ public class Disciplina {
         return valor;
     }
 
-    public int getNumeroAlunos(){
+    public int getNumeroAlunos() {
         return alunosMatriculados.size();
     }
 
