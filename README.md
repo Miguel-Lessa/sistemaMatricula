@@ -10,6 +10,12 @@ Este projeto foi desenvolvido para a matéria de Projetos de Software, do curso 
 |:---------------------:|
 | Diagrama de casos de uso |
 
+## Diagrama de classes 
+
+| <img src="Documentação/Class Diagram Template (Community).png" alt="class diagram"\> 
+|:---------------------:|
+| Diagrama de classes |
+
 ## Histórias de usuário
 
 | Usuário    |  Necessidade   | A fim de    |
