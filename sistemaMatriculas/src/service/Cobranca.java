@@ -1,3 +1,8 @@
+package service;
+
+import model.Aluno;
+import model.Disciplina;
+
 import java.util.List;
 
 public class Cobranca {

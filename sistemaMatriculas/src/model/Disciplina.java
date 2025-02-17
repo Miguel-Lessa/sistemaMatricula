@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class Disciplina {
     /// /    public boolean verificarAtivacao() {
     /// /        int i = 0;
     /// /
-    /// /        for (Aluno alunosMatriculados : alunosMatriculados) {
+    /// /        for (model.Aluno alunosMatriculados : alunosMatriculados) {
     /// /            i++;
     /// /        }
     /// /        if (i >= 3 && i <= 60) {

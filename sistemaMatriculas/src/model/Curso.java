@@ -1,3 +1,5 @@
+package model;
+
 import java.util.List;
 
 public class Curso {
@@ -47,12 +49,12 @@ public class Curso {
 
     public void adicionarDisciplinaObrigatoria(Disciplina disciplina){
         disciplinasObrigatorias.add(disciplina);
-        System.out.println("Disciplina obrigatoria " +disciplina.getNome()+", adicionada");
+        System.out.println("model.Disciplina obrigatoria " +disciplina.getNome()+", adicionada");
     }
 
     public void adicionarDisciplinaOptativa(Disciplina disciplina){
         disciplinasOptativas.add(disciplina);
-        System.out.println("Disciplina optativa "+disciplina.getNome()+ "adicionada");
+        System.out.println("model.Disciplina optativa "+disciplina.getNome()+ "adicionada");
     }
 
 }
