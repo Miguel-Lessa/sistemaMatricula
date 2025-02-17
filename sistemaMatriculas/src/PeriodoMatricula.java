@@ -7,6 +7,12 @@ public class PeriodoMatricula {
     private Date inicio, fim;
 
 
+    public PeriodoMatricula(Date inicio, Date fim) {
+        this.inicio = inicio;
+        this.fim = fim;
+    }
+    
+
     public boolean verificarPeriodo(){
         LocalDate hoje = LocalDate.now();
         LocalDate dataInicio = inicio.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
