@@ -7,4 +7,6 @@ public class Secretaria {
     public void verificarPeriodoMatricula(){
 
     }
+
+    public void cadastrarProfessor() {}
 }
