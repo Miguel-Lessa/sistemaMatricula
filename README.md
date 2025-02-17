@@ -15,6 +15,25 @@ Este projeto foi desenvolvido para a matéria de Projetos de Software, do curso 
 |:---------------------:|
 | Diagrama de classes |
 
+
+
+## Estrutura de Pacotes e Classes
+
+```plaintext
+src/
+├── model/
+│   ├── Aluno.java
+│   ├── Curso.java
+│   ├── Disciplina.java
+│   ├── Professor.java
+│   ├── Universidade.java
+│   └── Usuario.java
+└── service/
+    ├── CobrancaService.java
+    ├── PeriodoMatricula.java
+    └──  Secretaria.java
+```
+
 ## Histórias de usuário
 
 | Usuário    |  Necessidade   | A fim de    |
