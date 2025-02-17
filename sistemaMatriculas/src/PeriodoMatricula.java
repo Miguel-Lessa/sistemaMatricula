@@ -11,7 +11,7 @@ public class PeriodoMatricula {
         this.inicio = inicio;
         this.fim = fim;
     }
-    
+
 
     public boolean verificarPeriodo(){
         LocalDate hoje = LocalDate.now();
