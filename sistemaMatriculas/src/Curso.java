@@ -6,6 +6,44 @@ public class Curso {
     private List<Disciplina> disciplinasObrigatorias;
     private List<Disciplina> disciplinasOptativas;
 
+    public Curso(String nome, int creditosTotais, List<Disciplina> disciplinasObrigatorias, List<Disciplina> disciplinasOptativas) {
+        this.nome = nome;
+        this.creditosTotais = creditosTotais;
+        this.disciplinasObrigatorias = disciplinasObrigatorias;
+        this.disciplinasOptativas = disciplinasOptativas;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getCreditosTotais() {
+        return creditosTotais;
+    }
+
+    public void setCreditosTotais(int creditosTotais) {
+        this.creditosTotais = creditosTotais;
+    }
+
+    public List<Disciplina> getDisciplinasObrigatorias() {
+        return disciplinasObrigatorias;
+    }
+
+    public void setDisciplinasObrigatorias(List<Disciplina> disciplinasObrigatorias) {
+        this.disciplinasObrigatorias = disciplinasObrigatorias;
+    }
+
+    public List<Disciplina> getDisciplinasOptativas() {
+        return disciplinasOptativas;
+    }
+
+    public void setDisciplinasOptativas(List<Disciplina> disciplinasOptativas) {
+        this.disciplinasOptativas = disciplinasOptativas;
+    }
 
     public void adicionarDisciplinaObrigatoria(Disciplina disciplina){
         disciplinasObrigatorias.add(disciplina);
