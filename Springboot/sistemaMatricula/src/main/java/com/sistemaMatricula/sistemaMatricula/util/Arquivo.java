@@ -3,7 +3,7 @@ package com.sistemaMatricula.sistemaMatricula.util;
 import java.io.*;
 
 
-//tem uns erros ainda, eu vou resolver, mas não hoje, I'm tired boss
+//tem uns erros ainda, eu vou resolver, mas não hoje, I'm tired boss.
 
 public class Arquivo {
     // Método para criar arquivo
