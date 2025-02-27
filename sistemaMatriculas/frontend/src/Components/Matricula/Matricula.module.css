@@ -1,9 +1,9 @@
 form {
     display: flex;
-    flex-direction: column; /* Alinha os itens verticalmente */
+    flex-direction: column; 
     justify-self: center;
-    gap: 15px; /* Espaçamento entre os checkboxes */
-    
+    gap: 15px; 
+    color: #7f7d88;
     max-width: 600px;
     padding: 20px;
     box-sizing: border-box;
@@ -11,8 +11,8 @@ form {
 
 .checkboxcontainer {
     display: flex;
-    align-items: center; /* Alinha verticalmente o checkbox e o label */
-    gap: 10px; /* Espaçamento entre o checkbox e o label */
+    align-items: center;
+    gap: 10px; 
     width: 592px;
     height: 60px;
     background-color: #fcfbfc;
@@ -21,7 +21,7 @@ form {
 }
 
 label {
-    margin-left: 10px; /* Apenas um pequeno ajuste se necessário */
+    margin-left: 10px; 
 }
 
 h1 {

@@ -19,6 +19,10 @@ h1, h2, h3, h4, p {
     margin: 0px;
 }
 
+h1 {
+    font-weight: 300;
+}
+
 ui, li {
     list-style: none;
     padding: 0px;
