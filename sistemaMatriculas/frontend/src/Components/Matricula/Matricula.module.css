@@ -1,0 +1,97 @@
+form {
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    justify-self: center;
+    gap: 15px; /* Espaçamento entre os checkboxes */
+    
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.checkboxcontainer {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o checkbox e o label */
+    gap: 10px; /* Espaçamento entre o checkbox e o label */
+    width: 592px;
+    height: 60px;
+    background-color: #fcfbfc;
+    border: solid 1px #e4e4e4;
+    border-radius: 12px;
+}
+
+label {
+    margin-left: 10px; /* Apenas um pequeno ajuste se necessário */
+}
+
+h1 {
+    padding: 30px 0px;
+    text-align: center; 
+    font-size: 48px;
+}
+
+p {
+    text-align: center;
+}
+
+.button {
+    width: 195px;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    background-color: #521DCD;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+    font-weight: 500;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #450f98;
+    transform: scale(1.02); 
+    color: white; 
+    border: none;
+}
+
+
+.botoes {
+    display: flex;
+    gap: 15px;
+   justify-content: center;
+    flex-direction: row;
+}
+
+.cancelar {
+    width: 195px;
+    height: 50px;
+    color: #979797;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    background-color: #fcfbfc;
+    border: 1px solid #e4e4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+    font-weight: 500;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancelar:hover {
+    
+    transform: scale(1.02); 
+}
+
