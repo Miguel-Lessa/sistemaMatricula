@@ -94,4 +94,46 @@ p {
     
     transform: scale(1.02); 
 }
+.checkboxcontainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 592px;
+    height: 60px;
+    background-color: #fcfbfc;
+    border: solid 1px #e4e4e4;
+    border-radius: 12px;
+    padding: 10px;
+    position: relative;
+}
+.checkbox {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
 
+.checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #979797;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.checkbox:checked + .checkmark {
+    background-color: #3AC148;
+    border-color: #3AC148;
+}
+
+.checkbox:checked + .checkmark::after {
+    content: "✓";
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
