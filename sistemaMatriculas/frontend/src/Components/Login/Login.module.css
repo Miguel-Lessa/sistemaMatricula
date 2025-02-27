@@ -48,6 +48,7 @@ transition: all 0.3s ease;
     align-items: center;
     transition: all 0.3s ease; 
     cursor: pointer; 
+    font-weight: 500;
 }
 
 .button:hover {
