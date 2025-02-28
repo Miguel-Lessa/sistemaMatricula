@@ -68,6 +68,7 @@ public class Aluno {
         ArquivoService.getInstance().salvarAlunos(alunos);
     }
 
+
     //Getter e Setter
     public int getMatricula() {
         return matricula;
