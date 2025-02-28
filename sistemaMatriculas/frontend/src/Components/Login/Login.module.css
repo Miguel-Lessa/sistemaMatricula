@@ -23,7 +23,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
     padding-left: 20px;
 }
 
@@ -49,6 +48,7 @@ transition: all 0.3s ease;
     transition: all 0.3s ease; 
     cursor: pointer; 
     font-weight: 500;
+  margin-top: 10px;
 }
 
 .button:hover {

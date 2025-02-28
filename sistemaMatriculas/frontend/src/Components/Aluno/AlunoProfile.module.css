@@ -1,0 +1,133 @@
+form {
+    display: flex;
+    flex-direction: column; 
+    justify-self: center;
+    gap: 15px; 
+    color: #7f7d88;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.checkboxcontainer {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    width: 592px;
+    height: 60px;
+    background-color: #fcfbfc;
+    border: solid 1px #e4e4e4;
+    border-radius: 12px;
+}
+
+label {
+    margin-left: 10px; 
+}
+
+h1 {
+    padding: 30px 0px;
+    text-align: center; 
+    font-size: 48px;
+}
+
+p {
+    text-align: center;
+}
+
+.button {
+    width: 195px;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    background-color: #521DCD;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+    font-weight: 500;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #450f98;
+    transform: scale(1.02); 
+    color: white; 
+    border: none;
+}
+
+
+.botoes {
+    display: flex;
+    gap: 15px;
+   justify-content: center;
+    flex-direction: row;
+}
+
+.cancelar {
+    width: 195px;
+    height: 50px;
+    color: #979797;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    background-color: #fcfbfc;
+    border: 1px solid #e4e4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+    font-weight: 500;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancelar:hover {
+    
+    transform: scale(1.02); 
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.checkmark {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 1px solid #979797;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.checkbox:checked + .checkmark {
+    background-color: #D13A3D;
+    border-color: #D13A3D;
+}
+
+.checkbox:checked + .checkmark::after {
+    content: "-";
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkboxcontainer:has(.checkbox:checked) {
+    background-color: #fcf6f6; 
+    border-color: #E49495;
+}
