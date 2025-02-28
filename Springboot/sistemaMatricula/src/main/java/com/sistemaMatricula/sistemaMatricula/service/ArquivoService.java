@@ -20,6 +20,7 @@ public class ArquivoService {
         return instance;
     }
 
+
     public void salvarAlunos(List<Aluno> alunos) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("alunos.csv"))) {
             writer.write("nome,matricula,disciplinas_matriculadas\n");

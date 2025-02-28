@@ -23,7 +23,7 @@
 		<connection/>
 		<developerConnection/>
 	</scm>
-	<properties>
+	<properties> 
 		<java.version>23</java.version>
 	</properties>
 	<dependencies>

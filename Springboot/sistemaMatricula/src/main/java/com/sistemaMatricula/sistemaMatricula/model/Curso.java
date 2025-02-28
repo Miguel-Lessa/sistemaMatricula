@@ -88,4 +88,5 @@ public class Curso {
         disciplinasOptativas.add(disciplina);
         System.out.println("model.Disciplina optativa "+disciplina.getNome()+ "adicionada");
     }
+
 }
