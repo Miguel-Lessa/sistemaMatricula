@@ -7,7 +7,7 @@
 ## Instalação
 1. Clone o repositório:
 ```
-- git clone https://github.com/Miguel-Lessa/sistemaMatricula.git
+git clone https://github.com/Miguel-Lessa/sistemaMatricula.git
 ```
 2. Acesse a página do projeto:
  ```
