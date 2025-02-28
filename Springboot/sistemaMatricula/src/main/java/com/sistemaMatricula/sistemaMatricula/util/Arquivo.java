@@ -6,6 +6,8 @@ import java.io.*;
 //tem uns erros ainda, eu vou resolver, mas não hoje, I'm tired boss
 
 public class Arquivo {
+    private static final String E = "stan smith";
+
     // Método para criar arquivo
     public void criarArquivo(String filePath) {
         File file = new File(filePath);
@@ -15,6 +17,8 @@ public class Arquivo {
             } else {
                 System.out.println("File already exists.");
             }
+            throw new RuntimeException(E);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -43,3 +47,4 @@ public class Arquivo {
         return content.toString();
     }
 }
+

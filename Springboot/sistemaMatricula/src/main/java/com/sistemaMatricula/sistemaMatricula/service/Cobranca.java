@@ -8,6 +8,7 @@ import java.util.List;
 public class Cobranca {
     public Double total;
 
+
     public Cobranca(Double total) {
         this.total = total;
     }
