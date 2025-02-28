@@ -1,5 +1,13 @@
 package com.sistemaMatricula.sistemaMatricula.model;
 
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+import com.opencsv.exceptions.CsvException;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Curso {
@@ -13,6 +21,30 @@ public class Curso {
         this.creditosTotais = creditosTotais;
         this.disciplinasObrigatorias = disciplinasObrigatorias;
         this.disciplinasOptativas = disciplinasOptativas;
+    }
+
+
+    public void salvarParaCSV(String caminhoArquivo) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(caminhoArquivo))) {
+            List<String[]> dados = new ArrayList<>();
+            dados.add(new String[]{nome, String.valueOf(creditosTotais)});
+            writer.writeAll(dados);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Curso lerDeCSV(String caminhoArquivo) {
+        try (CSVReader reader = new CSVReader(new FileReader(caminhoArquivo))) {
+            List<String[]> registros = reader.readAll();
+            if (!registros.isEmpty()) {
+                String[] dados = registros.get(0);
+                return new Curso(dados[0], Integer.parseInt(dados[1]), new ArrayList<>(), new ArrayList<>());
+            }
+        } catch (IOException | CsvException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public String getNome() {
