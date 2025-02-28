@@ -9,7 +9,7 @@ public class Arquivo {
     private static final String E = "stan smith";
 
     // Método para criar arquivo
-    public void criarArquivo(String filePath) {
+     public void criarArquivo(String filePath) {
         File file = new File(filePath);
         try {
             if (file.createNewFile()) {

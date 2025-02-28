@@ -1,20 +1,21 @@
 package com.sistemaMatricula.sistemaMatricula.model;
 
+import lombok.Setter;
+
 import java.util.List;
 
 public class Professor {
+    private String nome;
+    @Setter
     private List<Disciplina> disciplinas;
 
-    public Professor(List<Disciplina> disciplinas) {
+    public Professor(String nome, List<Disciplina> disciplinas) {
+        this.nome = nome;
         this.disciplinas = disciplinas;
     }
 
     public List<Disciplina> getDisciplinas() {
         return disciplinas;
-    }
-
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
     }
 
     public List<Aluno> consultarAlunos (Disciplina disciplina){
@@ -24,5 +25,9 @@ public class Professor {
             }
         }
         return null;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }

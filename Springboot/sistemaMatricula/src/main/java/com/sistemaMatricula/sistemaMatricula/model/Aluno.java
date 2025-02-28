@@ -10,15 +10,15 @@ public class Aluno {
     private List<Disciplina> disciplinasMatriculadasObrigatorias;
     private List<Disciplina> disciplinasMatriculadasOptativas;
 
-    //Construtor
-    public Aluno(String nome, int matricula, List<Disciplina> disciplinasMatriculadasObrigatorias, List<Disciplina> disciplinasMatriculadasOptativas ) {
+    // Construtor
+    public Aluno(String nome, int matricula, List<Disciplina> disciplinasMatriculadasObrigatorias, List<Disciplina> disciplinasMatriculadasOptativas) {
         this.nome = nome;
         this.matricula = matricula;
         this.disciplinasMatriculadasObrigatorias = disciplinasMatriculadasObrigatorias;
         this.disciplinasMatriculadasOptativas = disciplinasMatriculadasOptativas;
     }
 
-    //toString
+    // toString
     @Override
     public String toString() {
         String disciplinasObrigatorias = String.join(";", disciplinasMatriculadasObrigatorias.stream().map(Disciplina::getNome).toArray(String[]::new));
@@ -26,50 +26,52 @@ public class Aluno {
         return nome + "," + matricula + "," + disciplinasObrigatorias + ";" + disciplinasOptativas;
     }
 
-    //Métodos
+    // Métodos
     public void matricular(Disciplina disciplina) {
-        if (disciplina.isObrigatoria() == true){
-            if (disciplinasMatriculadasObrigatorias.size() <= 4 && disciplina.isAtiva() == true){
+        if (disciplina.isObrigatoria()) {
+            if (disciplinasMatriculadasObrigatorias.size() <= 4 && disciplina.isAtiva()) {
                 disciplinasMatriculadasObrigatorias.add(disciplina);
-
-                System.out.println("Matricula na disciplina " + disciplina.getNome() + " realizada com sucesso!");
+                System.out.println("Matrícula na disciplina obrigatória " + disciplina.getNome() + " realizada com sucesso!");
             } else {
-                System.out.println("Numero máximo de disciplinas obrigatórias atingido");
+                System.out.println("Número máximo de disciplinas obrigatórias atingido ou disciplina inativa.");
             }
-        } else if (disciplina.isObrigatoria() == false && disciplina.isAtiva() == true){
-            if (disciplinasMatriculadasOptativas.size() <= 2){
+        } else if (disciplina.isAtiva()) {
+            if (disciplinasMatriculadasOptativas.size() <= 2) {
                 disciplinasMatriculadasOptativas.add(disciplina);
-                System.out.println("Matricula na disciplina "+ disciplina.getNome() +" realizada com sucesso!");
+                System.out.println("Matrícula na disciplina optativa " + disciplina.getNome() + " realizada com sucesso!");
             } else {
-                System.out.println("Numero máximo de disciplinas optativas atingido");
+                System.out.println("Número máximo de disciplinas optativas atingido.");
             }
         }
 
+        // Atualiza a lista de alunos no arquivo
         List<Aluno> alunos = ArquivoService.getInstance().carregarAlunos();
-        alunos.add(this);
-        ArquivoService.getInstance().salvarAlunos(alunos);
+        alunos.add(this);  // Atualiza o aluno na lista
+        ArquivoService.getInstance().salvarAlunos(alunos);  // Salva os alunos novamente no arquivo
     }
 
-
-
-
-    public void cancelarMatricula (Disciplina disciplina){
-        if (disciplinasMatriculadasObrigatorias.size() > 0 && disciplinasMatriculadasOptativas.size() > 0){
-            if (disciplina.isObrigatoria() == true){
-                disciplinasMatriculadasObrigatorias.remove(disciplina);
-                System.out.println("Disciplina obrigatória removida com sucesso!");
-            } else if (disciplina.isObrigatoria() == false){
-                disciplinasMatriculadasOptativas.remove(disciplina);
-                System.out.println("Disciplina optativa removida com sucesso!");
+    public void cancelarMatricula(Disciplina disciplina) {
+        if (disciplina.isObrigatoria()) {
+            if (disciplinasMatriculadasObrigatorias.remove(disciplina)) {
+                System.out.println("Disciplina obrigatória " + disciplina.getNome() + " removida com sucesso!");
+            } else {
+                System.out.println("Disciplina não encontrada entre as obrigatórias.");
+            }
+        } else {
+            if (disciplinasMatriculadasOptativas.remove(disciplina)) {
+                System.out.println("Disciplina optativa " + disciplina.getNome() + " removida com sucesso!");
+            } else {
+                System.out.println("Disciplina não encontrada entre as optativas.");
             }
         }
+
+        // Atualiza a lista de alunos no arquivo
         List<Aluno> alunos = ArquivoService.getInstance().carregarAlunos();
-        alunos.add(this);
-        ArquivoService.getInstance().salvarAlunos(alunos);
+        alunos.add(this);  // Atualiza a lista de alunos após o cancelamento
+        ArquivoService.getInstance().salvarAlunos(alunos);  // Salva novamente no arquivo
     }
 
-
-    //Getter e Setter
+    // Getters e Setters
     public int getMatricula() {
         return matricula;
     }

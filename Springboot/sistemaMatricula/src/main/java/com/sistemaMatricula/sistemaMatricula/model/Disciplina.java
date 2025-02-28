@@ -15,7 +15,7 @@ public class Disciplina {
     private String nome;
     private boolean obrigatoria;
     private List<Aluno> alunosMatriculados;
-    private Professor professor;
+    private Professor professor; // Agora o professor é um objeto completo
     private Double valor;
     private boolean ativa;
 
@@ -23,45 +23,63 @@ public class Disciplina {
         this.alunosMatriculados = new ArrayList<>();
     }
 
+    public Disciplina(String nome) {
+        this.nome = nome;
+        this.alunosMatriculados = new ArrayList<>(); // Inicializa a lista vazia
+    }
+
     public Disciplina(int codigo, String nome, boolean obrigatoria, Professor professor, Double valor) {
         this.codigo = codigo;
         this.nome = nome;
         this.obrigatoria = obrigatoria;
-        this.professor = professor;
+        this.professor = professor; // Usando o professor completo
         this.valor = valor;
         this.alunosMatriculados = new ArrayList<>(); // Inicializa a lista vazia
     }
 
     @Override
     public String toString() {
-        return codigo + "," + nome + "," + obrigatoria + "," + valor;
+        // Agora inclui o nome do professor na string
+        return codigo + "," + nome + "," + obrigatoria + "," + valor + "," + professor.getNome();
     }
 
     public boolean isAtiva() {
         int numeroAlunos = alunosMatriculados.size();
-        if ( numeroAlunos >= 3 && numeroAlunos <60){
+        if (numeroAlunos >= 3 && numeroAlunos < 60) {
             return true;
         }
         return false;
     }
-    //american dad é engraçadinho até, resolvi os commits misatribuidos
 
+    // Método para salvar os dados da disciplina no CSV
     public void salvarParaCSV(String caminhoArquivo) {
         try (CSVWriter writer = new CSVWriter(new FileWriter(caminhoArquivo))) {
             List<String[]> dados = new ArrayList<>();
-            dados.add(new String[]{String.valueOf(codigo), nome, String.valueOf(obrigatoria), String.valueOf(valor)});
+            // Salvando o nome do professor junto com a disciplina
+            dados.add(new String[]{
+                    String.valueOf(codigo), nome, String.valueOf(obrigatoria), String.valueOf(valor), professor.getNome()
+            });
             writer.writeAll(dados);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    // Método para ler uma disciplina e o professor do arquivo CSV
     public static Disciplina lerDeCSV(String caminhoArquivo) {
         try (CSVReader reader = new CSVReader(new FileReader(caminhoArquivo))) {
             List<String[]> registros = reader.readAll();
             if (!registros.isEmpty()) {
                 String[] dados = registros.get(0);
-                return new Disciplina(Integer.parseInt(dados[0]), dados[1], Boolean.parseBoolean(dados[2]), null, Double.parseDouble(dados[3]));
+                // Criação do objeto professor com base no nome
+                Professor professor = new Professor(dados[4], new ArrayList<>()); // Assumimos que o professor já existe
+                return new Disciplina(
+                        Integer.parseInt(dados[0]),
+                        dados[1],
+                        Boolean.parseBoolean(dados[2]),
+                        professor, // Atribui o professor
+                        Double.parseDouble(dados[3])
+                );
             }
         } catch (IOException | CsvException e) {
             e.printStackTrace();
@@ -69,8 +87,7 @@ public class Disciplina {
         return null;
     }
 
-
-
+    // Métodos de getter e setter
     public String getNome() {
         return nome;
     }
@@ -123,5 +140,3 @@ public class Disciplina {
         this.obrigatoria = obrigatoria;
     }
 }
-
-
