@@ -2,7 +2,7 @@ table {
     width: 590px;
     border-collapse: collapse;
     background: white;
-    margin-left: 20px;
+    margin-left: 25px;
     
 }
 th, td {
@@ -32,7 +32,7 @@ h1 {
 }
 
 h2 {
-   padding: 20px;
+   padding: 25px;
 }
 
 .input {
