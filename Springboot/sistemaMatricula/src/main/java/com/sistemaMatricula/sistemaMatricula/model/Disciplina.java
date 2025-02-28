@@ -45,7 +45,6 @@ public class Disciplina {
         return false;
     }
 
-
     public void salvarParaCSV(String caminhoArquivo) {
         try (CSVWriter writer = new CSVWriter(new FileWriter(caminhoArquivo))) {
             List<String[]> dados = new ArrayList<>();
