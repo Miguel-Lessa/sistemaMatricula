@@ -11,7 +11,6 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Login />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/alunoprofile" element={<AlunoProfile />} />
