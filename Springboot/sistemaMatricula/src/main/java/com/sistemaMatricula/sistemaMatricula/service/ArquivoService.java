@@ -37,7 +37,7 @@ public class ArquivoService {
         List<Aluno> alunos = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("alunos.csv"))) {
             String line;
-            reader.readLine(); // Skip header
+            reader.readLine();
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
                 String nome = parts[0];
