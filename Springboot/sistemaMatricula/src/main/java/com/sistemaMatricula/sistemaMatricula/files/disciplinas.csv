@@ -1,0 +1,12 @@
+codigo,nome,obrigatoria,valor,professor
+101,Matemática Aplicada,true,250.0,Dr. Silva
+102,Física Experimental,true,300.0,Prof. Almeida
+103,Química Geral,false,220.0,Dra. Santos
+104,História da Arte,false,180.0,Prof. Oliveira
+105,Algoritmos e Programação,true,280.0,Dr. Costa
+106,Redes de Computadores,false,260.0,Prof. Mendes
+107,Banco de Dados,true,290.0,Dr. Pereira
+108,Psicologia Cognitiva,false,200.0,Dra. Fernandes
+109,Economia Básica,false,230.0,Prof. Souza
+110,Engenharia de Software,true,310.0,Dr. Martins
+

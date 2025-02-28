@@ -3,6 +3,7 @@ package com.sistemaMatricula.sistemaMatricula.model;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
+import lombok.Setter;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Disciplina {
+    @Setter
     private int codigo;
     private String nome;
     private boolean obrigatoria;
@@ -19,11 +21,11 @@ public class Disciplina {
     private Double valor;
     private boolean ativa;
 
-    public Disciplina() {
+    public Disciplina(String nomeDisciplina, List<Disciplina> disciplinasObrigatorias) {
         this.alunosMatriculados = new ArrayList<>();
     }
 
-    public Disciplina(String nome) {
+    public Disciplina(String nome, boolean obrigatoria) {
         this.nome = nome;
         this.alunosMatriculados = new ArrayList<>(); // Inicializa a lista vazia
     }
@@ -32,10 +34,11 @@ public class Disciplina {
         this.codigo = codigo;
         this.nome = nome;
         this.obrigatoria = obrigatoria;
-        this.professor = professor; // Usando o professor completo
+        this.professor = professor;
         this.valor = valor;
         this.alunosMatriculados = new ArrayList<>(); // Inicializa a lista vazia
     }
+
 
     @Override
     public String toString() {
@@ -110,10 +113,6 @@ public class Disciplina {
 
     public int getCodigo() {
         return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public void setNome(String nome) {
