@@ -23,6 +23,11 @@ h1 {
     font-weight: 300;
 }
 
+h2 {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
 ui, li {
     list-style: none;
     padding: 0px;

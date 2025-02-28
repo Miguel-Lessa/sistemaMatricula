@@ -30,6 +30,21 @@ const AlunoProfile = () => {
           <input className={styles.button} type="submit" value="Remover" />
         </div>
       </form>
+
+      <h2>Cobranças</h2>
+
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R$ 5000,58</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

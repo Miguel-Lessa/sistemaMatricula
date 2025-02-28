@@ -4,6 +4,7 @@ import Login from "./Components/Login/Login";
 import AlunoProfile from "./Components/Aluno/AlunoProfile";
 import ProfessorProfile from "./Components/Professor/ProfessorProfile";
 import Matricula from "./Components/Matricula/Matricula";
+import AdmProfile from "./Components/Adm/AdmProfile";
 import Header from "./Header";
 import "./App.css";
 
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/alunoprofile" element={<AlunoProfile />} />
           <Route path="/matricula" element={<Matricula />} />
           <Route path="/professorprofile" element={<ProfessorProfile />} />
+          <Route path="/admprofile" element={<AdmProfile />} />
         </Routes>
       </BrowserRouter>
     </>
