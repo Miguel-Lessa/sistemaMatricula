@@ -1,12 +1,15 @@
 package com.sistemaMatricula.sistemaMatricula.model;
 
-import lombok.Setter;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Professor {
     private String nome;
-    @Setter
     private List<Disciplina> disciplinas;
 
     public Professor(String nome, List<Disciplina> disciplinas) {
@@ -18,16 +21,27 @@ public class Professor {
         return disciplinas;
     }
 
-    public List<Aluno> consultarAlunos (Disciplina disciplina){
-        for (Disciplina d : disciplinas){
-            if (d.equals(disciplina)){
-                return disciplina.getAlunosMatriculados();
-            }
-        }
-        return null;
-    }
-
     public String getNome() {
         return nome;
+    }
+
+    public List<String> lerNomesAlunosDeCSV(String caminhoArquivo, String nomeDisciplina) {
+        List<String> nomesAlunos = new ArrayList<>();
+        try (CSVReader reader = new CSVReader(new FileReader(caminhoArquivo))) {
+            List<String[]> registros = reader.readAll();
+            for (String[] registro : registros) {
+                String nomeAluno = registro[0];
+                String[] disciplinasAluno = registro[2].split(", ");
+                for (String disciplinaAluno : disciplinasAluno) {
+                    if (disciplinaAluno.equals(nomeDisciplina)) {
+                        nomesAlunos.add(nomeAluno);
+                        break;
+                    }
+                }
+            }
+        } catch (IOException | CsvException e) {
+            e.printStackTrace();
+        }
+        return nomesAlunos;
     }
 }

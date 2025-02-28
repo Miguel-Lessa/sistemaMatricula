@@ -55,11 +55,11 @@ public class Curso {
                 List<Disciplina> disciplinasOptativas = new ArrayList<>();
 
                 for (String nomeDisciplina : disciplinasObrigatoriasArray) {
-                    disciplinasObrigatorias.add(new Disciplina(nomeDisciplina));  // Criar disciplina pelo nome
+                    disciplinasObrigatorias.add(new Disciplina(nomeDisciplina, disciplinasObrigatorias ));  // Criar disciplina pelo nome
                 }
 
                 for (String nomeDisciplina : disciplinasOptativasArray) {
-                    disciplinasOptativas.add(new Disciplina(nomeDisciplina));  // Criar disciplina pelo nome
+                    boolean add = disciplinasOptativas.add(new Disciplina(nomeDisciplina, disciplinasOptativas ));// Criar disciplina pelo nome
                 }
 
                 cursos.add(new Curso(nome, creditosTotais, disciplinasObrigatorias, disciplinasOptativas));

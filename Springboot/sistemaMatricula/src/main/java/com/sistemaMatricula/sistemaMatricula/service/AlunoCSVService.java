@@ -54,16 +54,6 @@ public class AlunoCSVService implements PersistenciaCSV<Aluno> {
                 List<Disciplina> disciplinasObrigatorias = new ArrayList<>();
                 List<Disciplina> disciplinasOptativas = new ArrayList<>();
 
-                // Carrega as disciplinas obrigatórias
-                for (String disciplina : obrigatorias) {
-                    disciplinasObrigatorias.add(new Disciplina(disciplina));  // Criando uma disciplina apenas com o nome
-                }
-
-                // Carrega as disciplinas optativas
-                for (String disciplina : optativas) {
-                    disciplinasOptativas.add(new Disciplina(disciplina));  // Criando uma disciplina apenas com o nome
-                }
-
                 // Cria o aluno com as disciplinas carregadas
                 alunos.add(new Aluno(nome, matricula, disciplinasObrigatorias, disciplinasOptativas));
             }
