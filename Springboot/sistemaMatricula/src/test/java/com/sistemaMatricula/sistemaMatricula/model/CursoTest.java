@@ -1,7 +1,5 @@
 package com.sistemaMatricula.sistemaMatricula.model;
 
-import com.sistemaMatricula.sistemaMatricula.model.Aluno;
-import com.sistemaMatricula.sistemaMatricula.model.Disciplina;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

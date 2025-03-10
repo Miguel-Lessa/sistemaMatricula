@@ -1,12 +1,26 @@
-codigo,nome,obrigatoria,valor,professor
-101,Matemática Aplicada,true,250.0,Dr. Silva
-102,Física Experimental,true,300.0,Prof. Almeida
-103,Química Geral,false,220.0,Dra. Santos
-104,História da Arte,false,180.0,Prof. Oliveira
-105,Algoritmos e Programação,true,280.0,Dr. Costa
-106,Redes de Computadores,false,260.0,Prof. Mendes
-107,Banco de Dados,true,290.0,Dr. Pereira
-108,Psicologia Cognitiva,false,200.0,Dra. Fernandes
-109,Economia Básica,false,230.0,Prof. Souza
-110,Engenharia de Software,true,310.0,Dr. Martins
-
+"Nome","Obrigatoria","Valor","Professor"
+"Biologia","true","100.0","Dr. Smith"
+"Química","true","120.0","Dr. Johnson"
+"Física","true","110.0","Dr. Brown"
+"Matemática","true","130.0","Dr. White"
+"História","false","90.0","Dr. Green"
+"Geografia","false","80.0","Dr. Black"
+"Literatura","true","95.0","Dr. Adams"
+"Filosofia","true","105.0","Dr. Clark"
+"Sociologia","false","85.0","Dr. Lewis"
+"Artes","false","75.0","Dr. Walker"
+"Música","false","70.0","Dr. Hall"
+"Teatro","false","65.0","Dr. Allen"
+"Robótica","true","140.0","Dr. Young"
+"Computação","true","150.0","Dr. King"
+"Redes","true","145.0","Dr. Wright"
+"Banco de Dados","true","135.0","Dr. Lopez"
+"Sistemas Operacionais","true","125.0","Dr. Hill"
+"Psicologia","false","115.0","Dr. Scott"
+"Economia","true","155.0","Dr. Green"
+"Administração","true","160.0","Dr. Adams"
+"Engenharia","true","165.0","Dr. Baker"
+"Marketing","false","90.0","Dr. Nelson"
+"Gestão","false","95.0","Dr. Carter"
+"Contabilidade","true","170.0","Dr. Mitchell"
+"Finanças","true","175.0","Dr. Perez"

@@ -1,74 +1,74 @@
 package model;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
+
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Disciplina {
-    private int codigo;
     private String nome;
     private boolean obrigatoria;
-    private List<Aluno> alunosMatriculados;
-    private Professor professor;
-    private Double valor;
+    private double valor;
+    private String professor;
 
-    public Disciplina(int codigo, String nome, boolean obrigatoria, List<Aluno> alunosMatriculados, Professor professor, Double valor) {
-        this.codigo = codigo;
+    public Disciplina(String nome, boolean obrigatoria) {
         this.nome = nome;
         this.obrigatoria = obrigatoria;
-        this.alunosMatriculados = alunosMatriculados;
-        this.professor = professor;
-        this.valor = valor;
     }
 
-    public Disciplina(int codigo, String nome, boolean obrigatoria, Professor professor, Double valor) {
-        this.codigo = codigo;
+    public Disciplina(String nome, boolean obrigatoria, double valor, String professor) {
         this.nome = nome;
         this.obrigatoria = obrigatoria;
-        this.professor = professor;
         this.valor = valor;
-        this.alunosMatriculados = new ArrayList<>(); // Inicializa a lista vazia
-    }
-
-
-    /// /    public boolean verificarAtivacao() {
-    /// /        int i = 0;
-    /// /
-    /// /        for (model.Aluno alunosMatriculados : alunosMatriculados) {
-    /// /            i++;
-    /// /        }
-    /// /        if (i >= 3 && i <= 60) {
-    /// /            return true;
-    /// /        }
-//
-//        return false;
-//    }
-
-    public boolean verificarAtivacao() {
-        int numeroAlunos = alunosMatriculados.size();
-        return numeroAlunos >= 3 && numeroAlunos <= 60;
+        this.professor = professor;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public Double getValor() {
-        return valor;
-    }
-
-    public int getNumeroAlunos() {
-        return alunosMatriculados.size();
-    }
-
-    public List<Aluno> getAlunosMatriculados() {
-        return alunosMatriculados;
-    }
-
     public boolean isObrigatoria() {
         return obrigatoria;
     }
 
-    public void setObrigatoria(boolean obrigatoria) {
-        this.obrigatoria = obrigatoria;
+    public double getValor() {
+        return valor;
+    }
+
+    public String getProfessor() {
+        return professor;
+    }
+
+    public static List<Disciplina> carregarDeCSV(String filePath) throws IOException, CsvValidationException {
+        List<Disciplina> disciplinas = new ArrayList<>();
+        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+            String[] line;
+            reader.readNext();
+            while ((line = reader.readNext()) != null) {
+                if (line.length < 4) {
+                    System.out.println("Linha de disciplina inválida " + String.join(", ", line));
+                    continue;
+                }
+                String nome = line[0].trim();
+                boolean obrigatoria = Boolean.parseBoolean(line[1].trim());
+                double valor = Double.parseDouble(line[2].trim());
+                String professor = line[3].trim();
+                disciplinas.add(new Disciplina(nome, obrigatoria, valor, professor));
+            }
+        }
+        return disciplinas;
+    }
+
+    public List<String> getAlunosMatriculados() throws IOException, CsvValidationException {
+        List<Aluno> alunos = Aluno.carregarDeCSV("Springboot/sistemaMatricula/src/main/java/com/sistemaMatricula/sistemaMatricula/files/alunos.csv");
+        return alunos.stream()
+                .filter(aluno -> aluno.getDisciplinasMatriculadasObrigatorias().stream().anyMatch(d -> d.getNome().equals(this.nome)) ||
+                        aluno.getDisciplinasMatriculadasOptativas().stream().anyMatch(d -> d.getNome().equals(this.nome)))
+                .map(Aluno::getNome)
+                .collect(Collectors.toList());
     }
 }

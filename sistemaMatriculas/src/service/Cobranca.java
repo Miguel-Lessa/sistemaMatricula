@@ -1,30 +1,35 @@
 package service;
 
+import com.opencsv.exceptions.CsvValidationException;
 import model.Aluno;
 import model.Disciplina;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Cobranca {
-    public Double total;
+    private static final String DISCIPLINAS_FILE_PATH = "Springboot/sistemaMatricula/src/main/java/com/sistemaMatricula/sistemaMatricula/files/disciplinas.csv";
 
-    public Cobranca(Double total) {
-        this.total = total;
-    }
+    public double gerarCobranca(Aluno aluno) throws IOException, CsvValidationException {
+        List<Disciplina> todasDisciplinas = Disciplina.carregarDeCSV(DISCIPLINAS_FILE_PATH);
+        double total = 0.0;
 
-    public Double getTotal() {
-        return total;
-    }
-
-    public void setTotal(Double total) {
-        this.total = total;
-    }
-
-    public void gerarCobraca (Aluno aluno, List<Disciplina> disciplinas){
-        for (Disciplina disciplina : disciplinas){
-            total = total = total + disciplina.getValor();
-            System.out.println("O valor total é de: " + total );
+        for (Disciplina disciplina : aluno.getDisciplinasMatriculadasObrigatorias()) {
+            total += todasDisciplinas.stream()
+                    .filter(d -> d.getNome().equals(disciplina.getNome()))
+                    .findFirst()
+                    .map(Disciplina::getValor)
+                    .orElse(0.0);
         }
 
+        for (Disciplina disciplina : aluno.getDisciplinasMatriculadasOptativas()) {
+            total += todasDisciplinas.stream()
+                    .filter(d -> d.getNome().equals(disciplina.getNome()))
+                    .findFirst()
+                    .map(Disciplina::getValor)
+                    .orElse(0.0);
+        }
+
+        return total;
     }
 }

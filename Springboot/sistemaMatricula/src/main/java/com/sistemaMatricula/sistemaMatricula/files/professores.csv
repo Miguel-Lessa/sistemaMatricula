@@ -1,0 +1,21 @@
+Nome,ID,Senha,Disciplinas
+Dr. Silva,1,senha123,Matemática, Física
+Prof. Almeida,2,senha456,Física, Química
+Dra. Santos,3,senha789,Química, Biologia
+Prof. Oliveira,4,senha101,História, Geografia
+Dr. Costa,5,senha102,Computação, Redes
+Prof. Mendes,6,senha103,Redes, Banco de Dados
+Dr. Pereira,7,senha104,Banco de Dados, Sistemas Operacionais
+Dra. Fernandes,8,senha105,Psicologia, Sociologia
+Prof. Souza,9,senha106,Economia, Administração
+Dr. Martins,10,senha107,Engenharia, Física
+Prof. Lima,11,senha108,Administração, Marketing
+Dra. Rocha,12,senha109,Marketing, Gestão
+Prof. Nunes,13,senha110,Gestão, Contabilidade
+Dr. Cardoso,14,senha111,Contabilidade, Finanças
+Prof. Teixeira,15,senha112,Filosofia, História
+Dra. Gomes,16,senha113,Sociologia, Psicologia
+Prof. Ribeiro,17,senha114,Geografia, História
+Dr. Barros,18,senha115,Biologia, Química
+Prof. Azevedo,19,senha116,Artes, Música
+Dra. Carvalho,20,senha117,Música, Artes
